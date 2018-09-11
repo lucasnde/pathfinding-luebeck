@@ -1,6 +1,6 @@
-# React Boilerplate 
+# Pathfinding in Lübeck 
 
-React boilerplate using webpack 4
+Bases on dijkstra algorithm
 
-development: ```$ yarn start```  
-build: ```$ yarn build ```
+- development: ```$ npm run start```  
+- build: ```$ npm run build ```

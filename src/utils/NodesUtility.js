@@ -12,8 +12,8 @@ export const dijkstra = (graph, start, target) => {
 		visitedNodes = [],
 		nodeList = graph.map(node => ({
 			'id': +node.id,
-			'parent': null,
-			'costs': node.id === startNode.id ? 0 : Infinity,
+			'parent': +node.id,
+			'costs': node.id == startNode.id ? 0 : Infinity,
 		})
 	)
 
@@ -30,9 +30,9 @@ export const dijkstra = (graph, start, target) => {
 
 		unvisitedNeighbors.forEach(neighbor => {
 			let newCosts = investigatedNode.costs + neighbor.distance,
-				oldCosts = nodeList.find(e => e.id === neighbor.to).costs
+				oldCosts = nodeList.find(e => e.id == neighbor.to).costs
 			if (newCosts < oldCosts) {
-				let index = nodeList.findIndex(e => e.id === neighbor.to)
+				let index = nodeList.findIndex(e => e.id == neighbor.to)
 				nodeList[index].parent = investigatedNode.id
 				nodeList[index].costs = newCosts
 			}
@@ -50,7 +50,7 @@ export const dijkstra = (graph, start, target) => {
  * @param id
  * @returns {number | * | T | {}}
  */
-const getNode = (graph, id) => graph.find(e => e.id === id)
+const getNode = (graph, id) => graph.find(e => e.id == id)
 
 
 /**
@@ -62,7 +62,7 @@ const getNode = (graph, id) => graph.find(e => e.id === id)
  */
 const getUnvisitedNeighbors = (graph, node, visitedNeighbors) => {
 	node = getNode(graph, node)
-	let neighbors = graph.find(e => e === node).edges
+	let neighbors = graph.find(e => e == node).edges
 	neighbors = neighbors.filter(e => !visitedNeighbors.includes(e.to))
 	return neighbors
 }
@@ -86,17 +86,24 @@ const getPath = (list, start, target) => {
 		path = [],
 		costs = 0
 
-	while (currentId !== start) {
-		let next = list.find(e => e.id === currentId)
+	while (currentId != start) {
+		let next = list.find(e => e.id == currentId)
 
-		path.unshift(currentId)
+		path.unshift(+currentId)
 		currentId = next.parent
 		costs += next.costs
 	}
-	path.unshift(start)
+	path.unshift(+start)
 
 	return {
 		path,
 		costs
 	}
 }
+
+/**
+ *
+ * @param id
+ * @return {*}
+ */
+export const getCoordinates = id => nodes.find(e => e.id == id).coordinates

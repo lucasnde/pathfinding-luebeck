@@ -4,6 +4,7 @@
   "main": "index.js",
   "author": "Lucas Nowak",
   "license": "MIT",
+  "repository": "https://github.com/lucasnde/pathfinding-luebeck",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production"
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "google-map-react": "^1.0.6",
+    "materialize-css": "^1.0.0-rc.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   }

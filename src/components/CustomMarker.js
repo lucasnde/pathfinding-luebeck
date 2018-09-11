@@ -2,7 +2,7 @@ import React from 'react'
 
 const CustomMarker = ({text}) => (
 	<div className="custom-marker">
-		{ text }
+		<button>{ text }</button>
 	</div>
 )
 

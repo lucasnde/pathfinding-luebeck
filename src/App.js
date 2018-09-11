@@ -20,10 +20,15 @@ class App extends Component {
 		}
 	}
 
-	setStart = start => this.setState({start})
-	setDestination = destination => this.setState({destination})
+	setStart = start => this.setState({start}, () => this.calculateMap())
+
+	setDestination = destination => this.setState({destination}, () => this.calculateMap())
 
 	componentWillMount() {
+		this.calculateMap()
+	}
+
+	calculateMap = () => {
 		let path = dijkstra(nodes, this.state.start, this.state.destination).path
 		this.setState({path})
 	}
@@ -31,7 +36,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="app">
-				<Map/>
+				<Map start={this.state.start} destination={this.state.destination}/>
 				<SearchInput setStart={this.setStart} setDestination={this.setDestination}/>
 			</div>
 		)
