@@ -50,7 +50,7 @@ export const dijkstra = (graph, start, target) => {
  * @param id
  * @returns {number | * | T | {}}
  */
-const getNode = (graph, id) => graph.find(e => e.id == id)
+export const getNode = (graph, id) => graph.find(e => e.id == id)
 
 
 /**

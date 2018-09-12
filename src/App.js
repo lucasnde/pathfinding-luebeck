@@ -7,6 +7,7 @@ import { dijkstra } from './utils/NodesUtility'
 
 import SearchInput from './components/SearchInput'
 import CityMap from './components/CityMap'
+import Directions from './components/Directions'
 
 class App extends Component {
 
@@ -41,6 +42,9 @@ class App extends Component {
 							 setDestination={this.setDestination}
 							 start={this.state.start}
 							 destination={this.state.destination}/>
+				<Directions path={this.state.path}
+							setStart={this.setStart}
+							setDestination={this.setDestination}/>
 			</div>
 		)
 	}

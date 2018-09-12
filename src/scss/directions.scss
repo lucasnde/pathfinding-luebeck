@@ -1,0 +1,10 @@
+.btn {
+  width: 100%;
+  background-color: #4582C5;
+  border-color: #4582C5;
+
+  &:hover, &:focus {
+    background-color: #2196f3;
+    border-color: #2196f3;
+  }
+}
