@@ -39,6 +39,8 @@ class CityMap extends Component {
 				icon = customIcons.greenIcon
 			} else if (node.id == this.state.path[this.state.path.length -1]) {
 				icon = customIcons.redIcon
+			} else if (this.state.path.includes(node.id)) {
+				icon = customIcons.violetIcon
 			}
 
 			return (
