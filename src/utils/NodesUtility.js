@@ -60,7 +60,6 @@ export const dijkstra = (graph, start, target) => {
  */
 export const getNode = (graph, id) => graph.find(e => e.id == id)
 
-
 /**
  * return list of unvisited neighbors
  * @param graph: array
