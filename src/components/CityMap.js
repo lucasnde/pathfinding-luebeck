@@ -3,7 +3,7 @@ import '../scss/map.scss'
 import nodes from '../constants/nodes'
 import { Map, Marker, Popup, TileLayer, Polyline } from 'react-leaflet'
 import { getCoordinates } from '../utils/NodesUtility'
-
+import customIcons from '../constants/customIcons'
 
 class CityMap extends Component {
 	constructor(props) {
@@ -19,7 +19,10 @@ class CityMap extends Component {
 	componentWillReceiveProps(next) {
 		this.setState({
 			path: next.path
-		}, () => this.createLines())
+		}, () => {
+			this.createLines()
+			this.createMarker()
+		})
 	}
 
 	componentWillMount() {
@@ -30,31 +33,42 @@ class CityMap extends Component {
 	closeOnSelect = () => document.querySelector('.leaflet-popup-close-button').click()
 
 	createMarker = () => {
-		let locations = nodes.map((node, i) => (
-			<Marker key={i} position={[node.coordinates.latitude, node.coordinates.longitude]}>
-				<Popup>
-					<p style={{minWidth: '120px'}}>[{ node.id }]&nbsp;{ node.name }</p>
-					<div className="row">
-						<div className="col s6">
-							<div className="select-btn" onClick={() => {
-								this.props.setStart(node.id)
-								this.closeOnSelect()
-							}}>
-								Start
+		let locations = nodes.map((node, i) => {
+			let icon = customIcons.blueIcon
+			if (node.id == this.state.path[0]) {
+				icon = customIcons.greenIcon
+			} else if (node.id == this.state.path[this.state.path.length -1]) {
+				icon = customIcons.redIcon
+			}
+
+			return (
+				<Marker key={i}
+						position={[node.coordinates.latitude, node.coordinates.longitude]}
+						icon={icon}>
+					<Popup>
+						<p style={{minWidth: '120px'}}>[{ node.id }]&nbsp;{ node.name }</p>
+						<div className="row">
+							<div className="col s6">
+								<div className="select-btn" onClick={() => {
+									this.props.setStart(node.id)
+									this.closeOnSelect()
+								}}>
+									Start
+								</div>
+							</div>
+							<div className="col s6">
+								<div className="select-btn" onClick={() => {
+									this.props.setDestination(node.id)
+									this.closeOnSelect()
+								}}>
+									Ziel
+								</div>
 							</div>
 						</div>
-						<div className="col s6">
-							<div className="select-btn" onClick={() => {
-								this.props.setDestination(node.id)
-								this.closeOnSelect()
-							}}>
-								Ziel
-							</div>
-						</div>
-					</div>
-				</Popup>
-			</Marker>
-		))
+					</Popup>
+				</Marker>
+			)
+		})
 
 		this.setState({locations})
 	}
