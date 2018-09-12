@@ -53,13 +53,17 @@ class SearchInput extends Component {
 			<div className="container" id="searchInput">
 				<div className="row">
 					<div className="input-field col m6 s12">
-						<select id="selectStart" value={this.state.start} onChange={e => this.props.setStart(e.target.value)}>
+						<select id="selectStart"
+								value={this.state.start}
+								onChange={e => this.props.setStart(e.target.value)}>
 							{ this.state.locations }
 						</select>
 						<label>Start</label>
 					</div>
 					<div className=" input-field col m6 s12">
-						<select id="selectDestination" value={this.state.destination} onChange={e => this.props.setDestination(e.target.value)}>
+						<select id="selectDestination"
+								value={this.state.destination}
+								onChange={e => this.props.setDestination(e.target.value)}>
 							{ this.state.locations }
 						</select>
 						<label>Ziel</label>

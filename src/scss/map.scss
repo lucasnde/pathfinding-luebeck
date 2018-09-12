@@ -4,6 +4,12 @@
   margin: 0 auto;
 }
 
+@media screen and (max-width: 500px) {
+  .leaflet-container {
+    height: 70vh;
+  }
+}
+
 .select-btn {
   text-align: center;
   cursor: pointer ;
