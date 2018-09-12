@@ -18,7 +18,7 @@ class SearchInput extends Component {
 		this.setState({
 			start: next.start,
 			destination: next.destination
-		}, () => this.updateSelect())
+		}, () => this.initSelect())
 	}
 
 	componentWillMount() {
@@ -30,21 +30,15 @@ class SearchInput extends Component {
 	}
 
 	initSelect = () => {
-		$(document).ready(function(){
-			$('#selectStart').formSelect()
-		})
-		$(document).ready(function(){
-			$('#selectDestination').formSelect()
-		})
-	}
+		let startValue = this.state.start,
+			destinationValue = this.state.destination
 
-	updateSelect = () => {
 		$(document).ready(function(){
-			$('#selectStart').val(this.state.start)
+			$('#selectStart').val(startValue)
 			$('#selectStart').formSelect()
 		})
 		$(document).ready(function(){
-			$('#selectStart').val(this.state.destination)
+			$('#selectStart').val(destinationValue)
 			$('#selectDestination').formSelect()
 		})
 	}
