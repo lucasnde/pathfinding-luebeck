@@ -3,6 +3,9 @@
 Based on dijkstra algorithm.  
 More information can be found [here](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Pseudocode).
 
+![app gif](./src/images/demo-img-1.png)
+![app gif](./src/images/demo-img-2.png)
+
 ## Requirements
 
 - nodejs
