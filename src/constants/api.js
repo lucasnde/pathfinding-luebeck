@@ -1,5 +1,5 @@
 const API = {
-	googleMaps: "AIzaSyDnSLJ0Q_LGe7iVjVYzL_wzsfcybSgXwo4",
+	googleMaps: "AIzaSyBJgWpfFJvNfKJZTvmAk2ytKVQHOOP5z84",
 }
 
 export default API

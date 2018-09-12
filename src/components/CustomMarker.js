@@ -1,4 +1,5 @@
 import React from 'react'
+import '../scss/customMarker.scss'
 
 const CustomMarker = ({text}) => (
 	<div className="custom-marker">

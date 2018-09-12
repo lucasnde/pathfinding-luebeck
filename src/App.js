@@ -6,7 +6,7 @@ import nodes from './constants/nodes'
 import { dijkstra } from './utils/NodesUtility'
 
 import SearchInput from './components/SearchInput'
-import Map from './components/Map'
+import CityMap from './components/CityMap'
 
 class App extends Component {
 
@@ -36,8 +36,11 @@ class App extends Component {
 	render() {
 		return (
 			<div className="app">
-				<Map start={this.state.start} destination={this.state.destination}/>
-				<SearchInput setStart={this.setStart} setDestination={this.setDestination}/>
+				<CityMap setStart={this.setStart} setDestination={this.setDestination} path={this.state.path} />
+				<SearchInput setStart={this.setStart}
+							 setDestination={this.setDestination}
+							 start={this.state.start}
+							 destination={this.state.destination}/>
 			</div>
 		)
 	}

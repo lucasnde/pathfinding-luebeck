@@ -1,4 +1,18 @@
-.map {
-  width: 100%;
+.leaflet-container {
   height: 80vh;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.select-btn {
+  text-align: center;
+  cursor: pointer ;
+  background: #4582C5;
+  color: #fff;
+  border: 1px solid #4582C5;
+
+  &:hover {
+    color: #4582C5;
+    background: #fff;
+  }
 }
