@@ -1532,10 +1532,6 @@ const nodes = [
 				'to': 65,
 				'distance': 83
 			},
-			{
-				'to': 75,
-				'distance': 170
-			}
 		],
 		"coordinates": {
 			"latitude": 53.865761,
@@ -2988,6 +2984,24 @@ const nodes = [
 		"coordinates": {
 			"latitude": 53.858456,
 			"longitude": 10.686757
+		},
+	},
+	{
+		'name': 'Hüxterdamm / Kanalstraße',
+		'id': 129,
+		'edges': [
+			{
+				'to': 75,
+				'distance': 77
+			},
+			{
+				'to': 66,
+				'distance': 99
+			}
+		],
+		"coordinates": {
+			"latitude": 53.864873,
+			"longitude": 10.694193
 		},
 	}
 ]
