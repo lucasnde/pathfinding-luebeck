@@ -5,14 +5,18 @@ import '../scss/directions.scss'
 
 const Directions = ({path, setStart, setDestination}) => {
 	let way = path.map((e, i) => {
-		let icon = "location_on"
-		if (path.length === i + 1) icon = "star"
+		let iconColor = "#55AB3D"
+		if (path.length === i + 1) {
+			iconColor = "#BB373E"
+		} else if (i >= 1 && i < path.length) {
+			iconColor = "#954dc7"
+		}
 
 		const wayPoint = getNode(nodes, e)
 		return (
 			<li key={i}>
 				<div className="collapsible-header">
-					<i className="material-icons">{icon}</i>
+					<i style={{color: iconColor}} className="material-icons">location_on</i>
 					{wayPoint.name}
 					</div>
 				<div className="collapsible-body">
