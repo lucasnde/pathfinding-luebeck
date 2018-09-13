@@ -21,7 +21,7 @@ export const dijkstra = (graph, start, target) => {
 		})
 	)
 
-	// runs until every node is calculated and save in visitedNodes
+	// runs until every node is calculated and saved in visitedNodes
 	let notCompleted = true
 	while (notCompleted) {
 		notCompleted = nodeList.filter(e => !visitedNodes.includes(e.id)).length
