@@ -44,6 +44,6 @@ module.exports = {
   ],
   output: {
     filename: 'app.js',
-    path: path.join(__dirname, '/docs'),
+    path: path.join(__dirname, '/dist'),
   },
 }

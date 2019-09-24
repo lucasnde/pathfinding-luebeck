@@ -1,5 +1,4 @@
 # Pathfinding in Lübeck 
-> try project online [here](https://lucasnde.github.io/pathfinding-luebeck) 
 
 Based on dijkstra algorithm.  
 More information can be found [here](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Pseudocode).
