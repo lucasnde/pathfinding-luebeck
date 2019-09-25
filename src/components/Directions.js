@@ -4,12 +4,18 @@ import { getNode } from '../utils/NodesUtility'
 import '../scss/directions.scss'
 
 const Directions = ({path, setStart, setDestination}) => {
+	const iconColors = {
+		red: "#BB373E",
+		green: "#55AB3D",
+		violet: "#954dc7"
+	}
+
 	let way = path.map((e, i) => {
-		let iconColor = "#55AB3D"
+		let iconColor = iconColors.red
 		if (path.length === i + 1) {
-			iconColor = "#BB373E"
+			iconColor = iconColors.green
 		} else if (i >= 1 && i < path.length) {
-			iconColor = "#954dc7"
+			iconColor = iconColors.violet
 		}
 
 		const wayPoint = getNode(nodes, e)

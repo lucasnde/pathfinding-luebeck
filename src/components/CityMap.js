@@ -36,9 +36,9 @@ class CityMap extends Component {
 		let locations = nodes.map((node, i) => {
 			let icon = customIcons.blueIcon
 			if (node.id == this.state.path[0]) {
-				icon = customIcons.greenIcon
-			} else if (node.id == this.state.path[this.state.path.length -1]) {
 				icon = customIcons.redIcon
+			} else if (node.id == this.state.path[this.state.path.length -1]) {
+				icon = customIcons.greenIcon
 			} else if (this.state.path.includes(node.id)) {
 				icon = customIcons.violetIcon
 			}
