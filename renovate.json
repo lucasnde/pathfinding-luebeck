@@ -1,10 +1,15 @@
 {
+  "separateMajorMinor": false,
   "extends": [
-    "config:base"
+  ":preserveSemverRanges",
+  "group:all",
+  "schedule:monthly",
+  ":maintainLockFilesMonthly"
   ],
-  "automerge": true,
-  "major": {
-    "automerge": false
-  },
-  "schedule": "every weekday"
-}
+  "lockFileMaintenance": {
+  "extends": [
+  "group:all"
+  ],
+  "commitMessageAction": "Update"
+  }
+  }
